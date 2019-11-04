@@ -1,11 +1,17 @@
+import java.util.concurrent.TimeUnit;
 
-public class Imagine {
+public class Imagine implements Element {
 
 	private String nume;
 
 	public Imagine(String nume) {
-		super();
+	
 		this.nume = nume;
+		try {
+				TimeUnit.SECONDS.sleep(5);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			  }
 	}
 
 	public String getNume() {
@@ -17,8 +23,8 @@ public class Imagine {
 	}
 
 	@Override
-	public String toString() {
-		return "Imagine =" + nume;
+	public void print() {
+		System.out.println(nume);
 	}
 	
 	

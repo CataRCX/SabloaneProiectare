@@ -1,8 +1,8 @@
 
-public class Paragraf {
+public class Paragraf implements Element{
 
 	private String nume;
-
+	private AlignStrategy al;
 	public String getNume() {
 		return nume;
 	}
@@ -15,7 +15,20 @@ public class Paragraf {
 		super();
 		this.nume = nume;
 	}
-	public String toString() {
-		return "Paragraf =" + nume;
+	public AlignStrategy getAl() {
+		return al;
+	}
+
+	public void setAl(AlignStrategy al) {
+		this.al = al;
+	}
+
+	public void print() {
+		if(al != null){
+			al.print(nume);
+		}else {System.out.println(nume);}
+	}
+	public void setAlignStrategy( AlignStrategy n){
+		this.al = n;
 	}
 }

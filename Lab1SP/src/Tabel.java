@@ -1,5 +1,5 @@
 
-public class Tabel {
+public class Tabel implements Element{
 
 	private String nume;
 
@@ -9,9 +9,10 @@ public class Tabel {
 	}
 
 	@Override
-	public String toString() {
-		return "Tabel =" + nume;
+	public void print() {
+		System.out.println(nume);
 	}
+
 
 	
 	
