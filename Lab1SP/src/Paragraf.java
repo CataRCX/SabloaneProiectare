@@ -31,4 +31,11 @@ public class Paragraf implements Element{
 	public void setAlignStrategy( AlignStrategy n){
 		this.al = n;
 	}
+
+	@Override
+	public void accept(Visitor v) {
+		// TODO Auto-generated method stub
+		v.visit(this);
+
+	}
 }

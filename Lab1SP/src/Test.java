@@ -1,7 +1,14 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 public class Test {
 
-	public static void main (String [] args){
+	public static void main (String [] args) throws JsonParseException, JsonMappingException, IOException, InterruptedException{
 		
 //		Carte myBook = new Carte("Poveste");
 //		Autor autor = new Autor("Tolstoi");
@@ -67,9 +74,9 @@ public class Test {
 //		endTime = System.currentTimeMillis();
 //		System.out.println("Printing again the section 1 took " + (endTime -
 //		startTime) + " milliseconds");
-		//LABORATOR 5
+		//LABORATOR 5s
 		
-		
+	/*
 		Sectiune cap1 = new Sectiune("Capitolul 1");
 		Paragraf p1 = new Paragraf("Paragraph 1");
 		cap1.addElement(p1);
@@ -89,5 +96,49 @@ public class Test {
 		System.out.println("Printing with Alignment");
 		System.out.println();
 		cap1.print();
-	}
+		*/
+		//LABORATOR 6
+		
+		
+		
+		/*
+		 * Sectiune cap1 = new Sectiune("Capitolul 1");
+		Paragraf p1 = new Paragraf("Paragraph 1");
+		cap1.addElement(p1);
+		Paragraf p2 = new Paragraf("Paragraph 2");
+		cap1.addElement(p2);
+		Paragraf p3 = new Paragraf("Paragraph 3");
+		cap1.addElement(p3);
+		Paragraf p4 = new Paragraf("Paragraph 4");
+		cap1.addElement(p4);
+		cap1.addElement(new ImageProxy("ImageOne"));
+		cap1.addElement(new Imagine("ImageTwo"));
+		cap1.addElement(new Paragraf("Some text"));
+		cap1.addElement(new Tabel("Table 1"));
+		BookPrices stats2 = new BookPrices();
+		BookStatistic stats = new BookStatistic();
+		cap1.accept(stats);
+		cap1.accept(stats2);
+		stats2.printStats();
+		*/
+		
+		//LABORATOR 6
+//		String s = "C:\\Users\\Cata\\Downloads\\book.json";
+//		JSONBuilder jsonBuilder = new JSONBuilder(s);
+//	    jsonBuilder.build();
+//
+//	    Element myBook = jsonBuilder.getResult();
+//	    myBook.print();
+	    
+	    
+	    // LABORATOR 7
+	    Command cmd1 = new OpenCommand("C:\\Users\\Cata\\Downloads\\book.json");
+	    cmd1.execute();
+	    
+	    Command cmd2 = new StatisticsCommand();
+	    DocumentManager.getInstance().getCarte().print();
+	    cmd2.execute();
+	    
+	 
+	} 
 }

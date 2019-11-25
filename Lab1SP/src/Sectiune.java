@@ -26,4 +26,14 @@ public class Sectiune implements Element{
 			i.print();
 		}
 	}
+
+	@Override
+	public void accept(Visitor v) {
+		// TODO Auto-generated method stub
+		for(Element i:listaElem){
+			i.accept(v);
+		}
+		
+		
+	}
 }

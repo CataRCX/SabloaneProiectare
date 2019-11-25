@@ -24,5 +24,8 @@ public class Carte {
 			x.print();
 		}
 	}
+	public Element getElem(int i){
+		return lista.get(i);
+	}
 
 }
